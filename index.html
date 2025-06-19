@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hero with Styled Navbar</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600;700&family+Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family+Instrument+Sans:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  
+  <!-- Make sure this path is correct - CSS file should be in the same folder as index.html -->
+  <link rel="stylesheet" href="Assets/styles.css">
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <video id="heroVideo" class="hero-video" autoplay muted loop playsinline style="position: absolute; width: 100%; height: 100%; object-fit: cover; top: 0; left: 0; z-index: -1;">
+      <source src="Assets/videos/hero video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+      <!-- Custom Navbar -->
+<div class="custom-navbar container d-flex justify-content-between align-items-center">
+  <div class="logo">
+    <img src="Assets/images/logo.png" alt="Logo">
+  </div>
+
+  <!-- Desktop Navigation (hidden on mobile) -->
+  <div class="nav-links d-none d-lg-flex justify-content-center">
+    <a href="#hero" class="nav-link active">Home</a>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#services" class="nav-link">Services</a>
+    <a href="#lidar" class="nav-link">Lidar</a>
+    <a href="#jobs" class="nav-link">Jobs</a>
+  </div>
+
+  <button class="contact-btn d-none d-lg-flex">Contact</button>
+
+  <!-- Hamburger Menu Button (visible on mobile) -->
+  <button class="hamburger d-lg-none" id="hamburgerBtn">
+    <div class="hamburger-icon">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+    </div>
+  </button>
+</div>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu-overlay" id="mobileMenuOverlay">
+  <div class="mobile-menu-content">
+    <div class="mobile-nav-links">
+      <a href="#hero" class="mobile-nav-link">Home</a>
+      <a href="#about" class="mobile-nav-link">About</a>
+      <a href="#services" class="mobile-nav-link">Services</a>
+      <a href="#lidar" class="mobile-nav-link">Lidar</a>
+      <a href="#jobs" class="mobile-nav-link">Jobs</a>
+      <button class="mobile-contact-btn">Contact</button>
+    </div>
+  </div>
+</div>
+
+    <!-- Sticky Vertical Social Media Icons -->
+    <div class="social-media-bar">
+      <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
+      <a href="#" target="_blank"><i class="bi bi-instagram"></i></a>
+      <a href="#" target="_blank"><i class="bi bi-twitter"></i></a>
+      <a href="#" target="_blank"><i class="bi bi-linkedin"></i></a>
+      <a href="#" target="_blank"><i class="bi bi-youtube"></i></a>
+    </div>
+  </section>
+
+  <!-- Matchmoving Section -->
+  <section class="matchmoving-section container my-5">
+    <div class="row align-items-start g-4">
+      <!-- Left Side -->
+      <div class="col-lg-7">
+        <h2 class="matchmoving-heading">Get Top-Quality Match Moving VFX Services with Matchmation</h2>
+        <div class="row g-3 my-3 matchmoving-image-row">
+          <div class="col-md-6">
+            <img src="Assets/images/Matchmove.png" class="img-fluid matchmoving-img" alt="Tracking Visual">
+          </div>
+          <div class="col-md-6">
+            <img src="Assets/images/match_movine.png" class="img-fluid matchmoving-img" alt="Wireframe Visual">
+          </div>
+        </div>
+        <p class="matchmoving-description">
+          At Matchmation, we specialize in transforming your visual content into stunning cinematic experiences.
+          Whether for commercials, TV shows, or films, we deliver precise and accurate visual effects with the help of advanced technology and a skilled team.
+        </p>
+
+        <p class="matchmoving-description">
+          In the ever-evolving world of VFX, combining live-action footage with digital elements demands accuracy and detail.
+          Our 3D Camera Tracking services ensure seamless integration of virtual assets into real-world scenes by accurately replicating camera movement and perspective.
+        </p>
+        <p class="matchmoving-description">
+          From Tracking & Match Moving to Rotoanimation, our experts use industry-leading tools to deliver reliable, high-quality results tailored to your project's needs.
+          At Matchmation, we're driven by creativity, precision, and innovation.
+        </p>
+      </div>
+
+      <!-- Right Side Form -->
+      <div class="col-lg-5">
+        <div class="matchmoving-form-box">
+          <h4 class="form-title">Get a <span style="color: #FE0000;">Bid</span></h4>
+          <p class="form-subtext">24 hours. That's all it will take you to figure out the cost benefits of outsourcing!</p>
+          <form>
+            <input type="text" class="form-control custom-input" placeholder="Full Name" required>
+            <input type="text" class="form-control custom-input" placeholder="Studio" required>
+            <input type="email" class="form-control custom-input" placeholder="Email" required>
+            <input type="tel" class="form-control custom-input" placeholder="Mobile Number" required>
+            <select class="form-control custom-input" id="trackingComplexitySelect" required>
+              <option disabled selected value="">Tracking Complexity</option>
+              <option value="Simple">Simple</option>
+              <option value="Medium">Medium</option>
+              <option value="Complex">Complex</option>
+            </select>
+            
+            <!-- Dynamic Footage Length Field -->
+            <div class="footage-length-container">
+              <select class="form-control footage-type-select" id="footageTypeSelect" onchange="handleFootageTypeChange()" required>
+                <option disabled selected>Footage Length</option>
+                <option value="choose-option">—Please choose an option—</option>
+                <option value="min-seconds">Min : Seconds</option>
+                <option value="frames">Frames</option>
+              </select>
+              
+              <div class="footage-length-row" id="footageInputRow" style="display: none; margin-top: 10px;">
+                <select class="footage-type-select" id="footageDisplaySelect" disabled>
+                  <option>Min : Seconds</option>
+                </select>
+                <input type="text" class="footage-value-input" id="footageValueInput" placeholder="01:59" required>
+              </div>
+              
+              <div id="framesInputRow" style="display: none; margin-top: 10px;">
+                <input type="number" class="custom-input" id="framesInput" placeholder="Number of frames" min="1" required>
+              </div>
+            </div>
+            
+            <input type="date" class="form-control custom-input" required>
+            <button type="submit" class="btn submit-btn">SUBMIT</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- VFX Intro and Card Section -->
+<section class="vfx-intro-section py-5">
+  <div class="container-fluid px-5">
+    <div class="row justify-content-between align-items-center">
+
+      <!-- Text Section -->
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <h2 class="vfx-heading">
+          <span class="highlight">Matchmation</span> is a Vancouver-based <br>
+          VFX studio specializing in high-precision <br>
+          matchmove and tracking services.
+        </h2>
+        <p class="vfx-subtext mt-4">
+          We deliver seamless digital integration with expertise in camera tracking,
+          body matchmove, LiDAR, techviz, and on-set supervision.
+        </p>
+      </div>
+
+      <!-- Cards Section -->
+      <div class="col-lg-6">
+        <div class="row gy-4">
+            <div class="col-md-6 col-lg-4">
+              <!-- Card 1 -->
+              <div class="vfx-card">
+                <div class="card-icon">
+                  <img src="Assets/images/lidar.png" alt="Icon 1">
+                </div>
+                <h5 class="card-title">Advanced Technology for Modern Effects</h5>
+                <p class="card-text">
+                  We stay up-to-date with the latest trends and technology to ensure that we are always providing the most cutting-edge visual effects for our clients.
+                </p>
+                <div class="corner-circle"></div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+
+              <!-- Card 2 -->
+              <div class="vfx-card">
+                <div class="card-icon">
+                  <img src="Assets/images/lidar.png" alt="Icon 2">
+                </div>
+                <h5 class="card-title">Collaborative Process for Optimal Results</h5>
+                <p class="card-text">
+                  Our team works closely with our clients throughout the entire process to ensure that their creative vision is achieved.
+                </p>
+                <div class="corner-circle"></div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+
+              <!-- Card 3 -->
+              <div class="vfx-card">
+                <div class="card-icon">
+                  <img src="Assets/images/lidar.png" alt="Icon 3">
+                </div>
+                <h5 class="card-title">On-Set Supervision for Seamless Integration</h5>
+                <p class="card-text">
+                  Our on-set supervision ensures that your visual effects seamlessly integrate with your work, resulting in a truly immersive viewing experience.
+                </p>
+                <div class="corner-circle"></div>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- VFX Services Section -->
+  <section class="vfx-services-section">
+    <div class="container">
+      <div class="services-header">
+        <div class="explore-tag">\ EXPLORE \</div>
+        <h2 class="services-title">Our Various Match Moving VFX Services</h2>
+        <p class="services-description">
+          Frame Founder Studio, Match Moving in VFX provides a whole spectrum of services to meet all of your visual effects requirements.
+        </p>
+        
+        <div class="nav-arrows">
+          <button class="nav-arrow" onclick="scrollServicesLeft()">‹</button>
+          <button class="nav-arrow" onclick="scrollServicesRight()">›</button>
+        </div>
+      </div>
+
+      <div class="services-cards-container">
+        <div class="services-cards-wrapper" id="servicesCardsWrapper">
+          
+          <!-- Object Tracking Card -->
+          <div class="service-card-item">
+            <div class="service-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=280&fit=crop&crop=top" alt="Motion Tracking" class="service-img">
+            </div>
+            <div class="service-content-card">
+              <div class="service-content">
+                <h3 class="service-name">Object Tracking</h3>
+                <div class="service-text-container">
+                  <div class="scroll-track"></div>
+                  <div class="scroll-thumb"></div>
+                  <p class="service-text">
+                    Object tracking is the difficult problem of calculating an object's trajectory in an image plane as it travels across a scene. This involves identifying and following specific objects or features through multiple frames of video footage. The process requires sophisticated algorithms to maintain accuracy even when objects are partially occluded, change in appearance, or move rapidly. Modern object tracking systems use machine learning and computer vision techniques to achieve robust performance across various challenging scenarios. Advanced tracking methods can handle complex motion patterns, lighting changes, and occlusions while maintaining precise positional data throughout the sequence.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Planar Tracking Card -->
+          <div class="service-card-item">
+            <div class="service-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=400&h=200&fit=crop&crop=center" alt="Planar Tracking" class="service-img">
+            </div>
+            <div class="service-content-card">
+              <div class="service-content">
+                <h3 class="service-name">Planar Tracking</h3>
+                <div class="service-text-container">
+                  <div class="scroll-track"></div>
+                  <div class="scroll-thumb"></div>
+                  <p class="service-text">
+                    A flat or curved surface in your video, such as a wall, floor, face, or screen, may be tracked using a technique called planar tracking. This method analyzes the perspective changes of a surface as the camera moves, allowing for accurate placement of visual elements that need to appear as if they're part of the original scene. Planar tracking is essential for tasks like screen replacements, adding graphics to walls, or creating realistic augmented reality effects that maintain proper perspective and lighting. The technique works by analyzing multiple points on a surface and calculating how they move together as a cohesive plane, providing stable tracking data for compositing work.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lens Distortion Card -->
+          <div class="service-card-item">
+            <div class="service-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=200&fit=crop&crop=center" alt="Compositing" class="service-img">
+            </div>
+            <div class="service-content-card">
+              <div class="service-content">
+                <h3 class="service-name">Lens Distortion</h3>
+                <div class="service-text-container">
+                  <div class="scroll-track"></div>
+                  <div class="scroll-thumb"></div>
+                  <p class="service-text">
+                    A basic technique called a lens distortion grid aids visual effects technicians in dewarping images and improving motion tracking accuracy. Camera lenses naturally introduce distortion, particularly at the edges of the frame, which can interfere with precise tracking and compositing work. By analyzing and correcting these distortions, VFX artists can ensure that digital elements integrate seamlessly with live-action footage, maintaining realistic perspective and avoiding telltale signs of digital manipulation. Lens distortion correction involves mathematical models that account for barrel distortion, pincushion distortion, and other optical aberrations to create perfectly straight lines and accurate measurements in the final composite.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Motion Tracking Card -->
+          <div class="service-card-item">
+            <div class="service-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=280&fit=crop&crop=top" alt="Motion Tracking" class="service-img">
+            </div>
+            <div class="service-content-card">
+              <div class="service-content">
+                <h3 class="service-name">Motion Tracking</h3>
+                <div class="service-text-container">
+                  <div class="scroll-track"></div>
+                  <div class="scroll-thumb"></div>
+                  <p class="service-text">
+                    Motion tracking involves monitoring an object's or a camera's movements inside a video clip and using that information to create realistic digital effects. This fundamental VFX technique enables the seamless integration of computer-generated elements with live-action footage by matching the movement, rotation, and scale of virtual objects to the camera's motion. Advanced motion tracking systems can handle complex camera movements, multiple objects, and challenging lighting conditions to deliver professional-quality results. The process involves analyzing pixel patterns, feature points, and geometric relationships to extract precise motion data that can be applied to digital assets, ensuring they move naturally within the filmed environment.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rotoscoping Card -->
+          <div class="service-card-item">
+            <div class="service-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1536431311719-398b6704d4cc?w=400&h=200&fit=crop&crop=center" alt="Rotoscoping" class="service-img">
+            </div>
+            <div class="service-content-card">
+              <div class="service-content">
+                <h3 class="service-name">Rotoscoping</h3>
+                <div class="service-text-container">
+                  <div class="scroll-track"></div>
+                  <div class="scroll-thumb"></div>
+                  <p class="service-text">
+                    Rotoscoping is an animation technique that animators use to trace over motion picture footage, frame by frame, to produce realistic action sequences and precise masking for visual effects. This meticulous process involves creating detailed mattes that separate foreground elements from backgrounds, enabling complex compositing work such as background replacements, color corrections, and the addition of digital effects. Modern rotoscoping tools use AI assistance to speed up the process while maintaining the precision required for professional VFX work. The technique requires careful attention to edge detail, motion blur, and temporal consistency to create seamless mattes that hold up under scrutiny in the final composite.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Compositing Card -->
+          <div class="service-card-item">
+            <div class="service-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=200&fit=crop&crop=center" alt="Compositing" class="service-img">
+            </div>
+            <div class="service-content-card">
+              <div class="service-content">
+                <h3 class="service-name">Compositing</h3>
+                <div class="service-text-container">
+                  <div class="scroll-track"></div>
+                  <div class="scroll-thumb"></div>
+                  <p class="service-text">
+                    Compositing is the combining of visual elements from separate sources into single images, often to create the illusion that all those elements are parts of the same scene. This crucial final step in the VFX pipeline involves layering multiple elements such as live-action footage, digital matte paintings, 3D renders, and particle effects while carefully matching lighting, color, and perspective. Professional compositing requires expertise in color theory, lighting principles, and advanced software techniques to achieve photorealistic results. The process involves careful attention to edge blending, color matching, depth relationships, and atmospheric effects to create convincing final imagery that seamlessly integrates all visual elements.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <h3 class="faq-heading">
+        FAQs On VFX <span class="highlight">Matchmove</span>
+      </h3>
+
+      <div class="faq-container">
+        <!-- FAQ 1 -->
+        <div class="faq-item active" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span class="faq-question-text">1. Which are the other VFX services offered by Toolbox Studio?</span>
+            <div class="faq-arrow"></div>
+          </div>
+          <div class="faq-answer show">
+            <div class="faq-answer-content">
+              Other than Matchmove VFX, we also offer other services:<br><br>
+              <strong>Paint</strong> consists of enhancing, purging, repurposing, and removing objects.<br>
+              <strong>Compositing</strong> aids in combining all the 2D and 3D VFX elements together.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span class="faq-question-text">2. Is our content secure with your VFX Matchmove studio?</span>
+            <div class="faq-arrow"></div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              Yes, your content is completely secure. We follow strict NDA protocols and secure infrastructure for all projects.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span class="faq-question-text">3. Can Toolbox handle priority VFX Matchmove projects?</span>
+            <div class="faq-arrow"></div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-content">
+              Absolutely. We have a dedicated team to handle time-sensitive or high-priority matchmove projects with precision and speed.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer-section text-light pt-5 pb-3">
+    <div class="container">
+      <div class="row gy-4">
+
+        <!-- Logo & Description -->
+        <div class="col-md-3">
+          <img src="Assets/images/logo.png" alt="Matchmotion Logo" class="footer-logo">
+          <p class="footer-desc">Matchmation makes VFX service<br>exchange simple, secure, and efficient</p>
+          <div class="d-flex gap-3 mt-3 footer-icons">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div class="col-md-3">
+          <h6 class="footer-heading">Services</h6>
+          <ul class="footer-list">
+            <li>Camera Tracking</li>
+            <li>Object Tracking</li>
+            <li>Rotoanim</li>
+            <li>Soft Tracking</li>
+            <li>Layout</li>
+            <li>On-set Supervision</li>
+            <li>Techviz</li>
+            <li>Lidar</li>
+            <li>Postviz</li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-md-3">
+          <h6 class="footer-heading">Contact</h6>
+          <p class="footer-text">Address:</p>
+          <p class="footer-text">1013 N WHITNALL HWY BURBANK CA 91505</p>
+          <p class="footer-text">Email:<br>info@matchmotion.com</p>
+          <p class="footer-text">Phone:<br>1-323-208-6560, 1-818-575-6560</p>
+        </div>
+
+        <!-- Useful Links -->
+        <div class="col-md-3">
+          <h6 class="footer-heading">Useful Links</h6>
+          <ul class="footer-list">
+            <li><a href="#" class="footer-link">About</a></li>
+            <li><a href="#" class="footer-link">Privacy Policy</a></li>
+            <li><a href="#" class="footer-link">Terms of services</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Divider Line -->
+      <hr class="footer-divider">
+
+      <!-- Copyright -->
+      <p class="footer-copy">copyright@2025 matchmotion. All rights reserved</p>
+    </div>
+  </footer>
+
+  <!-- Location -->
+  <div class="location text-white">
+    <i class="bi bi-geo-alt-fill"></i> HYDERABAD, INDIA
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Make sure this path is correct - JS file should be in the same folder as index.html -->
+  <script src="Assets/script.js"></script>
+
+</body>
+</html>
